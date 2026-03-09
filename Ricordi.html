@@ -1,0 +1,113 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Ricordi</title>
+    <link rel="stylesheet" href="Compleannostile.css">
+    <style>
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .memory-card {
+            background: rgba(255,255,255,0.7);
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(200,150,150,0.4);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(200,150,150,0.4);
+            background: rgba(255,255,255,0.85);
+        }
+
+        .memory-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #c27b7f;
+            margin-bottom: 10px;
+        }
+
+        .memory-text {
+            font-size: 15px;
+            color: #6d5a5a;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📸 Ricordi Speciali 📸</h1>
+    <nav>
+        <a href="Compleanno.html">Home</a>
+        <a href="Compleannomsg.html">Messaggio</a>
+        <a href="Compleannogallery.html">Stanza Speciale</a>
+		<a href="Ricordi.html">Ricordi</a>
+
+    </nav>
+</header>
+
+<div class="card">
+    <h2 style="font-size:30px; margin-bottom:15px;">I nostri ricordi 💕</h2>
+    <p style="font-size:17px;">
+        Sorry bro non posso mettere delle nostre foto 😔, ma ecco a te dei bei momenti passati insieme 😌 ...
+    </p>
+
+    <div class="memory-grid">
+
+        <div class="memory-card" onclick="spawnHearts()">
+            <div class="memory-title">✨ Ricordo 1</div>
+            <div class="memory-text">Quella volta che abbiamo fatto 16 ore di chiacchere in un giorno </div>
+        </div>
+
+        <div class="memory-card" onclick="spawnHearts()">
+            <div class="memory-title">✨ Ricordo 2</div>
+            <div class="memory-text">Le nostre conversazioni assurde che nessuno capirebbe (troppi nomi in codice hahaha).</div>
+        </div>
+
+        <div class="memory-card" onclick="spawnHearts()">
+            <div class="memory-title">✨ Ricordo 3</div>
+            <div class="memory-text">Le confidenze alle 2 di notte che restano tra noi.</div>
+        </div>
+
+        <div class="memory-card" onclick="spawnHearts()">
+            <div class="memory-title">✨ Ricordo 4</div>
+            <div class="memory-text">Le figure imbarazzanti fatte insieme con orgoglio.</div>
+        </div>
+
+        <div class="memory-card" onclick="spawnHearts()">
+            <div class="memory-title">✨ Ricordo 5</div>
+            <div class="memory-text">Le volte in cui ci capiamo senza parlare.</div>
+        </div>
+
+        <div class="memory-card" onclick="spawnHearts()">
+            <div class="memory-title">✨ Ricordo 6</div>
+            <div class="memory-text">Le nostre battute private che nessuno deve sapere.</div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function spawnHearts() {
+    for (let i = 0; i < 8; i++) {
+        let h = document.createElement("div");
+        h.className = "heart";
+        h.textContent = "💕";
+        h.style.left = Math.random() * 100 + "%";
+        h.style.animationDuration = (2 + Math.random() * 2) + "s";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 5000);
+    }
+}
+</script>
+
+</body>
+</html>

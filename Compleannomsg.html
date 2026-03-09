@@ -1,0 +1,80 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Messaggio Speciale</title>
+    <link rel="stylesheet" href="Compleannostile.css">
+</head>
+<body>
+
+<header>
+    <h1>💗 Messaggio dalla tua Darlingg 💗</h1>
+    <nav>
+        <a href="Compleanno.html">Home</a>
+        <a href="Compleannomsg.html">Messaggio</a>
+        <a href="Compleannogallery.html">Stanza Speciale</a>
+		<a href="Ricordi.html">Ricordi</a>
+
+    </nav>
+</header>
+
+<div class="card">
+    <h2 style="font-size:32px; margin-bottom:20px;">  Darlinggg +17 ho gyeee hiiii </h2>
+
+    <p style="font-size:18px; margin-bottom:20px;">
+        So so so  <strong> DARLING </strong>.  
+       kida lagda +17 ho ke?!?!? Un anno e sei maggiorenee fer gadhi ch gehri layea kara gye 😂
+    </p>
+
+    <p id="m1" class="hidden fade">Ti prometto che.. </p>
+    <p id="m2" class="hidden fade"> Hun tohmain tenu tang nahi karungi…  </p>
+    <p id="m3" class="hidden fade"> pr sirf ajj..kal ton phir shuru 😂. </p>
+    <p id="m4" class="hidden fade"> Apparte gli scherzi.. grazie bro per questa amicizia </p>
+    <p id="m5" class="hidden fade"> È bella molto bella.. e grazieee per essere sempre con me e per difendermi anche quando io non ci sono... bohat bohat shukriyaaa janemannn   </p>
+    <p id="m6" class="hidden fade"> 🫶🫶</p>
+
+    <p id="m7" class="hidden fade" style="font-size:22px; font-weight:700; text-shadow:0 0 12px #d89a9d;">
+        Quindi buon compleanno bestiee .  
+        Ora vai nella Stanza Speciale..molto speciale.
+    </p>
+
+    <button class="button" onclick="nextMsg()">Continua ➜</button>
+
+    <a class="button" href="Compleannogallery.html" style="margin-left:10px;">Vai alla Stanza Speciale ✨</a>
+</div>
+
+<script>
+let s = 0;
+
+function nextMsg() {
+    s++;
+    if (s === 1) reveal("m1");
+    if (s === 2) reveal("m2");
+    if (s === 3) reveal("m3");
+    if (s === 4) reveal("m4");
+    if (s === 5) reveal("m5");
+    if (s === 6) reveal("m6");
+    if (s === 7) {
+        reveal("m7");
+        createHearts();
+    }
+}
+
+function reveal(id) {
+    document.getElementById(id).classList.remove("hidden");
+}
+
+function createHearts() {
+    for (let i = 0; i < 15; i++) {
+        let h = document.createElement("div");
+        h.className = "heart";
+        h.textContent = "💕";
+        h.style.left = Math.random() * 100 + "%";
+        h.style.animationDuration = (2 + Math.random() * 3) + "s";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 5000);
+    }
+}
+</script>
+
+</body>
+</html>

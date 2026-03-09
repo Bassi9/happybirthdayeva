@@ -1,0 +1,73 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Compleanno</title>
+    <link rel="stylesheet" href="Compleannostile.css">
+</head>
+<body>
+
+<header>
+    <h1>🎉 Happy Birthday Darlinggggg 🎉</h1>
+	<br>
+    <nav>
+        <a href="Compleanno.html">Home</a>
+        <a href="Compleannomsg.html">Messaggio</a>
+        <a href="Compleannogallery.html">Stanza Speciale</a>
+		<a href="Ricordi.html">Ricordi</a>
+
+    </nav>
+</header>
+
+<div class="card">
+    <h2 style="font-size:32px; margin-bottom:20px;"> Benvenuta a questo sito fatto con tanto impegno ✨</h2>
+
+    <p style="font-size:18px; margin-bottom:20px;">
+        Prima cosa: <strong>  Janamdin di a bohat bohat mubarka darling  </strong>. <br>   
+        Seconda cosa: Rab tenu hamesha khush rakheee...te apni zindagi deh harek din ch tu mere nahl galh kar sakhe teh menu new new gossip dasse.. 🙂
+    </p>
+
+    <p id="i1" class="hidden fade"> Bestie level: unlocked forever 🔐</p>
+    <p id="i2" class="hidden fade">Chill sei solo all'inizio c'è tanto altro che ti aspetta... </p>
+    <p id="i3" class="hidden fade"> (PS: Non lo sto facendo pk mi hai mandato 20.000 reel del genere ) </p>
+    <p id="i4" class="hidden fade"> (nooo 🙂)  😂😂 </p>
+
+    <button class="button" onclick="nextIntro()">Sblocca la prima parte 🔓</button>
+
+    <hr style="margin:40px 0; border:0; height:1px; background:rgba(200,150,150,0.3);">
+
+    <a class="button" href="Compleannomsg.html" style="margin-top:30px;">Vai al messaggio ➜</a>
+</div>
+
+<script>
+let step = 0;
+
+function nextIntro() {
+    step++;
+    if (step === 1) reveal("i1");
+    if (step === 2) reveal("i2");
+    if (step === 3) reveal("i3");
+    if (step === 4) {
+        reveal("i4");
+        createHearts();
+    }
+}
+
+function reveal(id) {
+    document.getElementById(id).classList.remove("hidden");
+}
+
+function createHearts() {
+    for (let i = 0; i < 12; i++) {
+        let h = document.createElement("div");
+        h.className = "heart";
+        h.textContent = "💕";
+        h.style.left = Math.random() * 100 + "%";
+        h.style.animationDuration = (2 + Math.random() * 3) + "s";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 5000);
+    }
+}
+</script>
+
+</body>
+</html>

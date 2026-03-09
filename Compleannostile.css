@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(135deg, #f7e7e9, #fdf6f0, #f8e9e4);
+    color: #5a4a4a;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 25px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,200,200,0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #c27b7f;
+    text-shadow: 0 0 8px rgba(255,200,200,0.6);
+}
+
+/* NAV */
+nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #a67c7c;
+    font-weight: 600;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c27b7f;
+    text-shadow: 0 0 10px rgba(194,123,127,0.5);
+}
+
+/* CARD */
+.card {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 45px;
+    background: rgba(255,255,255,0.75);
+    border-radius: 25px;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,200,200,0.4);
+    animation: fadeIn 1s ease;
+}
+
+/* ANIMAZIONI */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* BUTTON */
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 26px;
+    background: linear-gradient(135deg, #e8b7b9, #d89a9d);
+    color: #fff;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: 0.25s;
+    box-shadow: 0 6px 20px rgba(200,150,150,0.4);
+}
+
+.button:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(200,150,150,0.6);
+}
+
+/* HIDDEN */
+.hidden { display: none; }
+
+/* CUORI EMOJI 💕 */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 32px;
+    animation: floatUp linear forwards;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-60vh) scale(1.2); opacity: 0.8; }
+    100% { transform: translateY(-120vh) scale(0.9); opacity: 0; }
+}
+
+/* FLIP CARDS */
+.flip-container {
+    perspective: 1200px;
+}
+
+.flip-card {
+    width: 260px;
+    height: 180px;
+    margin: 20px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+
+.flip-card:hover {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.flip-front {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(200,150,150,0.4);
+    color: #a67c7c;
+}
+
+.flip-back {
+    background: rgba(216,154,157,0.25);
+    border: 1px solid rgba(216,154,157,0.5);
+    transform: rotateY(180deg);
+    color: #5a4a4a;
+}
